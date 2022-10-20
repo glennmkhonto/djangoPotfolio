@@ -11,10 +11,10 @@ class UserAdminConfig(UserAdmin):
     ordering = ('-start_date',)
     list_display = ('email', 'user_name', 'first_name',
                     'is_active', 'is_staff')
-    fieldsets = (
-        (None, {'fields': ('email', 'user_name', 'first_name', 'gender', 'date_of_birth', 'address', 'zip_code', 'city', 'start_date', 'photo')}),
+    fieldsets = (('User Location', {'fields': ('location',)}),
+        ('User Information', {'fields': ('email', 'user_name', 'first_name', 'date_of_birth', 'address', 'zip_code', 'city', 'start_date', 'photo')}),
         ('Permissions', {'fields': ('is_staff', 'is_active')}),
-        ('Personal', {'fields': ('about',)}),
+        ('Bio', {'fields': ('about',)}),
     )
     formfield_overrides = {
         NewUser.about: {'widget': Textarea(attrs={'rows': 10, 'cols': 40})},
@@ -22,7 +22,7 @@ class UserAdminConfig(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'user_name', 'first_name', 'gender', 'password1', 'password2', 'is_active', 'is_staff',
+            'fields': ('email', 'user_name', 'first_name', 'password1', 'password2', 'is_active', 'is_staff',
                        'date_of_birth', 'address', 'zip_code', 'city', 'start_date', 'photo')}
          ),
     )
