@@ -1,6 +1,6 @@
 # djangoPortfolio
 
-# Please be careful not to expose you IP address to the wrong people as some part of the code can expose it, However I did not manage to intergrate it in the entire project but the code is within the project
+# Please be careful not to expose your IP address to the wrong people as some part of the code can expose it, However I did not manage to intergrate it in the entire project but the code is within the project under, the code is under views.py
 
 Welcome to the portfolio I built with Django as a framework
 
