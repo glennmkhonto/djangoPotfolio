@@ -7,7 +7,7 @@ class UserAccountTests(TestCase):
     def test_new_superuser(self):
         db = get_user_model()
         super_user = db.objects.create_superuser(
-            'testuser@super.com', 'username', 'firstname', 'password')
+            'testuser@super.com', 'usernameTesting', 'firstnameTesting', 'passwordTesting')
         self.assertEqual(super_user.email, 'testuser@super.com')
         self.assertEqual(super_user.user_name, 'username')
         self.assertEqual(super_user.first_name, 'firstname')

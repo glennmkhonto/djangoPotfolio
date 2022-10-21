@@ -11,10 +11,10 @@ class UserAdminConfig(UserAdmin):
     ordering = ('-start_date',)
     list_display = ('email', 'user_name', 'first_name',
                     'is_active', 'is_staff')
-    fieldsets = (
-        (None, {'fields': ('email', 'user_name', 'first_name', 'date_of_birth', 'address', 'zip_code', 'city', 'start_date', 'photo')}),
+    fieldsets = (('User Location', {'fields': ('location',)}),
+        ('User Information', {'fields': ('email', 'user_name', 'first_name', 'date_of_birth', 'address', 'zip_code', 'city', 'start_date', 'photo')}),
         ('Permissions', {'fields': ('is_staff', 'is_active')}),
-        ('Personal', {'fields': ('about',)}),
+        ('Bio', {'fields': ('about',)}),
     )
     formfield_overrides = {
         NewUser.about: {'widget': Textarea(attrs={'rows': 10, 'cols': 40})},
